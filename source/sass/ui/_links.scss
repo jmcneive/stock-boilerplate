@@ -1,0 +1,18 @@
+// ===================================================
+// All core UI links that share the same basic look
+// will descend from .link
+// ===================================================
+
+p {
+    a {
+       @include link(true);
+    }
+}
+
+.link {
+    @include link();
+}
+
+.link-underline {   
+    @include link(true);
+}

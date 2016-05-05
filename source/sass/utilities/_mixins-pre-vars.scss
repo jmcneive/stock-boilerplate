@@ -1,0 +1,113 @@
+// ===================================================
+// MIXINS- PRE VARIABLES
+// ===================================================
+
+$typl8-font-base-px: $typl8-font-base * 1px;
+
+@function em($px, $base: $typl8-font-base-px) {
+    @return ($px / $base) * 1em;
+}
+
+@mixin font-smoothing {
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+
+    /* the line below is a hack to get Chrome to render fonts decently on Windows */
+    //-webkit-text-stroke-width: 0.5px;
+}
+
+@mixin clearfix {
+    &:after {
+        content:"";
+        display:table;
+        clear:both;
+    }
+}
+
+// Fixes extra padding under images set to inline-block
+@mixin inline-fix {
+    margin: 0;
+    vertical-align: top;
+}
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin horizontal-align {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@mixin preserve-3d {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+@mixin debug {
+    border: solid red 1px !important;
+}
+
+@mixin transition-hover {
+    transition: all 0.25s ease-out 0s;
+}
+
+@mixin stroke($stroke-color: $grey-light) {
+    -webkit-text-stroke: 1px $stroke-color;
+    text-shadow:
+        -1px -1px 0 $stroke-color,  
+        1px -1px 0 $stroke-color,
+        -1px 1px 0 $stroke-color,
+        1px 1px 0 $stroke-color;
+}
+
+@mixin border-outlined-box($number-of-outlines: 0, $distance-of-outlines: 11px) {
+    
+    position: relative;
+    border: 2px solid $white;
+    
+    background-color: $black;
+    background-color: rgba(0,0,0, 0.6);
+    
+    @if $number-of-outlines > 0 {
+        
+        margin: 10px;
+        
+        &:before {
+            content: " ";
+            position: absolute;
+            z-index: -1;
+            top: -$distance-of-outlines;
+            left: -$distance-of-outlines;
+            right: -$distance-of-outlines;
+            bottom: -$distance-of-outlines;
+            border: 1px solid $gold;
+        }
+    }
+    
+    @if $number-of-outlines > 1 {
+    
+        margin: 20px;
+            
+        &:after {
+            content: " ";
+            position: absolute;
+            z-index: -1;
+            top: -($distance-of-outlines - 1)*2;
+            left: -($distance-of-outlines - 1)*2;
+            right: -($distance-of-outlines - 1)*2;
+            bottom: -($distance-of-outlines - 1)*2;
+            border: 1px solid $gold;
+        }
+    }
+}

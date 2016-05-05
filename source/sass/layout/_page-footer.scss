@@ -1,0 +1,13 @@
+
+footer.page-footer {
+    
+    margin: 0;
+    padding-top: 1.5%;
+    padding-bottom: 70px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: $z-index-page-footer;
+    color: $page-footer-color;
+    background-color: $page-footer-bg-color;
+}

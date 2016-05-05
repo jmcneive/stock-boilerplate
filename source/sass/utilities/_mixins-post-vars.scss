@@ -1,0 +1,15 @@
+// ===================================================
+// MIXINS- POST VARIABLES
+// ===================================================
+
+@mixin link($text-decoration: none, $color: $link-color, $hover-color: $link-hover-color) {
+    color: $color;
+    text-decoration: $text-decoration;
+    @include transition-hover();
+    
+    &:hover,
+    &.active {
+        color: $hover-color;
+        text-decoration: $text-decoration;
+    }
+}

@@ -1,0 +1,70 @@
+// ===================================================
+// COLOR:
+// ===================================================
+
+// Base
+// -------------------------------------//
+
+$white:                 #ffffff;
+$grey:                  #999999;
+$black:                 #010101;
+
+$instagram:             #517fa4;
+$pinterest:             #c92228;
+$facebook:              #3b5998;
+$twitter:               #0093d7;
+$linkedin:              #007bb5;
+
+
+// Custom / Site Specific
+// -------------------------------------//
+
+
+
+// Variants
+// -------------------------------------//
+
+$grey-darkest:          darken($grey, 75%);
+$grey-darker:           darken($grey, 36%);
+$grey-dark:             darken($grey, 25%);
+$grey-light:            lighten($grey, 25%);
+$grey-lighter:          lighten($grey, 30%);
+$grey-lightest:         lighten($grey, 35%);
+
+
+// Layout
+// -------------------------------------//
+$body-color:               $grey-darker;
+$body-bg-color:            $grey-lightest;
+
+$heading-color:            $grey-darkest;
+
+$link-color:               $grey-dark;
+$link-hover-color:         $grey;
+
+$button-color:             $grey-lighter;
+$button-bg-color:          $grey-dark;
+$button-hover-color:       $grey-lightest;
+$button-hover-bg-color:    $grey-darkest;
+
+$page-header-color:        $grey-lightest;
+$page-header-bg-color:     $grey-darkest;
+
+$nav-link-color:           $grey-light;
+$nav-link-hover-color:     $white;
+$nav-link-bg-color:        transparent;
+$nav-link-hover-bg-color:  transparent;
+
+$nav-link-mobile-color:           $grey-lighter;
+$nav-link-mobile-hover-color:     $white;
+$nav-link-mobile-bg-color:        $grey-darker;
+$nav-link-mobile-hover-bg-color:  $grey-dark;
+
+$menu-btn-color:           $nav-link-mobile-color;
+$menu-btn-hover-color:     $nav-link-mobile-hover-color;
+$menu-btn-bg-color:        $nav-link-mobile-bg-color;
+$menu-btn-hover-bg-color:  $nav-link-mobile-hover-bg-color;
+
+$page-footer-color:        $grey-darkest;
+$page-footer-bg-color:     $grey-lighter;
+

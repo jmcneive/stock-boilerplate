@@ -1,0 +1,25 @@
+
+.page-body {
+    position: relative;
+    z-index: $z-index-page-body;
+    margin-top: $header-height-sm;
+    padding: 1.5%;
+    
+    @media screen and (min-width: $phablet) {
+        margin-top: $header-height-lg
+    }
+    
+    section {
+        
+        &.anchor {
+            display: block;
+            position: absolute;
+            visibility: hidden;
+            top:-$header-height-sm-with-offset;
+            
+            @media screen and (min-width: $phablet) {
+                top:-$header-height-lg-with-offset;
+            }
+        }
+    }
+}

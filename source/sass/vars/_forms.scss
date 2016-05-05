@@ -1,0 +1,15 @@
+// Input color and borders
+$input-font-size:                         em(20px);
+$input-color:                             $body-color;
+$input-background-color:                  $white;
+$input-border:                            1px solid $grey-light;
+$input-border-focus-color:                $grey-dark;
+$input-border-radius:                     0;
+
+// Styled select
+$styled-select-btn-width:                 em(40px);
+$styled-select-btn-icon-font-family:      'icomoon';
+$styled-select-btn-icon-font-code:        '\e900';
+$styled-select-btn-icon-color:            $input-color;
+$styled-select-btn-icon-position-top:     20%;
+$styled-select-padding-right:             em(10px);

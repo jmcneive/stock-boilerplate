@@ -1,0 +1,195 @@
+
+header.page-header {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $z-index-page-header;
+    overflow-y: hidden;
+    color: $page-header-color;
+    background-color: $page-header-bg-color;
+    height: $header-height-sm;
+    transition: height 0.4s ease-out;
+
+    @media screen and (min-width: $phablet) {
+        height: $header-height-lg;
+        background-color: $black;
+    }
+
+    a.brand-logo {
+        display: inline-block;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 50px;
+        color: $white;
+        text-decoration: none;
+        line-height: $header-height-sm; 
+        transition: width 0.4s ease-out;
+
+        @media screen and (min-width: $phablet) {
+            width: 60px;
+            line-height: $header-height-lg;
+        }
+
+        img {
+            display: inline;
+            width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+    }
+
+    nav {
+        display: block;
+
+        &.primary {
+            position: relative;
+            top: auto;
+            z-index: 3;
+
+            @media screen and (min-width: $phablet) {
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding-right: $page-padding;
+            }
+
+            @media screen and (min-width: $desktop-large) {
+                padding-right: $page-padding-lg;
+            }
+
+            ul {
+                margin: 0 auto;
+                padding: 0;
+                list-style: none;
+                text-align: center;
+                
+                @media screen and (min-width: $phablet) {
+                    text-align: right;
+                }
+
+                li {
+                    display: inline-block;
+                    margin: 0;
+                    width: 100%;
+                    @include navigation-font();
+
+                    &:last-child {
+                        margin-bottom: 15px;
+                        
+                        @media screen and (min-width: $phablet) {
+                            margin-bottom: 0;
+                            
+                            a {
+                                padding-right: 0 !important;
+                            }
+                        }
+                    }
+
+                    @media screen and (min-width: $phablet) {
+                        display: inline-block;
+                        width: auto;
+                        margin: em(37px) 0 0 0;
+                    }
+
+                    @media screen and (min-width: $desktop) {
+                        margin-top: em(35px);
+                    }
+
+                    a {
+                        display: block;
+                        margin-bottom: em(3px);
+                        padding: em(10px);
+                        background-color: $nav-link-mobile-bg-color;
+                        color: $nav-link-mobile-color;
+                        text-decoration: none;
+                        @include typl8-typescale(map-get($typl8-scale, typl8-delta), $typl8-font-base, rem);
+                        line-height: em(20px);
+
+                        @include transition-hover();
+
+                        @media screen and (min-width: $phablet) {
+                            padding: 0 em(10px);
+                            background-color: $nav-link-bg-color;
+                            @include typl8-typescale(map-get($typl8-scale, typl8-zeta), $typl8-font-base, rem);
+                            line-height: em(18px);
+                            color: $nav-link-color;
+                        }
+
+                        @media screen and (min-width: $laptop) {
+                            padding: 0 em(10px);
+                            @include typl8-typescale(map-get($typl8-scale, typl8-epsilon), $typl8-font-base, rem);
+                            line-height: em(18px);
+                        }
+
+                        @media screen and (min-width: $desktop) {
+                            padding: 0 em(10px);
+                            @include typl8-typescale(map-get($typl8-scale, typl8-delta), $typl8-font-base, rem);
+                            line-height: em(20px);
+                        }
+
+                        &:hover,
+                        &.active {
+                            color: $nav-link-mobile-hover-color;
+                            background-color: $nav-link-mobile-hover-bg-color;
+                            cursor: pointer;
+
+                            @media screen and (min-width: $phablet) {
+                                color: $nav-link-hover-color;
+                                background-color: $nav-link-hover-bg-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    a.menu-button {
+        display: inline-block;
+        position: absolute;
+        top: 12px;
+        right: $base-padding;
+        z-index: 10;
+        padding: 0 em(15px) 0;
+        width: auto;
+        height: $header-height-sm/2.5;
+        background-color: $menu-btn-bg-color;
+        line-height: $header-height-sm/2.5;
+        text-decoration: none;
+        color: $menu-btn-color;
+        text-transform: uppercase;
+        @include typl8-typescale(12, $typl8-font-base, rem);
+
+        @media screen and (min-width: $phablet) {
+
+            display: none;
+        }
+
+        &:hover {
+            color: $menu-btn-hover-color;
+            background-color: $menu-btn-hover-bg-color;
+        }
+    }
+
+    &.open {
+
+        height: $header-height-sm + $mobile-menu-height;
+
+        @media screen and (min-width: $phablet) {
+            height: $header-height-lg;
+        }
+
+        nav.primary {
+
+            top: auto;
+
+            @media screen and (min-width: $phablet) {
+                top: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+// ===================================================
+// LAYOUT:
+// ===================================================
+
+// Page
+$page-padding-sm:                   15px;
+$page-padding:                      30px;
+$page-padding-lg:                   60px;
+
+// Default padding base
+$base-padding:                      em(10px);
+
+// Header/Nav
+$header-height-sm:                  80px;
+$header-height-lg:                  90px;
+
+// Header with Offset included
+$header-height-sm-with-offset:      $header-height-sm - 1;
+$header-height-lg-with-offset:      $header-height-lg - 1;
+
+$mobile-menu-height:                140px;
+
+// Footer
+
+
+// Z-Index Map
+$z-index-page-header:               30;
+$z-index-page-body:                 10;
+$z-index-page-footer:               20;

@@ -1,0 +1,91 @@
+// ===================================================
+// All core UI buttons that share the same basic look
+// will descend from .button
+// ===================================================
+
+// Default button is white:
+.button {
+    position: relative;
+    display: inline-block;
+    margin: em(10px) 0;
+    padding: 0 em(40px);
+    outline: none;
+    border-radius: 0;
+    background-color: $button-bg-color;
+    color: $button-color;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    white-space: nowrap;
+    line-height: em(50px);
+    cursor: pointer;
+    @include button-font();
+    @include typl8-typescale(map-get($typl8-scale, typl8-delta), $typl8-font-base, rem);
+    @include transition-hover();
+    
+    @media screen and (min-width: $max-width) {
+        @include typl8-typescale(map-get($typl8-scale, typl8-gamma), $typl8-font-base, rem);
+    }
+
+    label,
+    input {
+        padding: 0 em(60px);
+        outline: none;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+        line-height: em(50px);
+    }
+    
+    p {
+        margin: 0;
+        padding: 0;
+    }
+    
+    &:hover,
+    &.active,
+    &.slick-current {
+        background-color: $button-hover-bg-color;
+        color: $button-hover-color;
+    }
+
+    &.full-width {
+        width: 100%;
+    }
+
+    &.compressed {
+        @include typl8-typescale(map-get($typl8-scale, typl8-delta), $typl8-font-base, rem);
+        padding: 0 em(30px);
+    }
+    
+    &.disabled {
+        border-color: $grey-lighter;
+        color: $grey-lighter;
+        opacity: 0.5;
+        cursor: default;
+
+        &:hover,
+        &.active {
+            border-color: $grey-lighter;
+            color: $grey-lighter;
+        }
+    }
+    
+    &.has-input,
+    &.has-label {
+        padding: 0 !important;
+        line-height: 0 !important;
+        
+        .label,
+        input {
+            position: relative;
+            z-index: 2;
+        }
+        
+        &:before,
+        &:after {
+            z-index: 0;
+        }
+    }
+}

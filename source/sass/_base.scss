@@ -1,0 +1,117 @@
+*, 
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Prevent words from breaking between 2 letters */
+* {
+    word-break: keep-all;
+    -webkit-hyphens: none;
+}
+
+// Remove tap highlight on iOS
+input,
+textarea,
+button,
+select,
+label,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// Usually 0.5 base font size works
+sup {
+    font-size: 0.5em;
+}
+
+html,
+body {
+    background-color: $body-bg-color;
+}
+
+html {
+    @include font-smoothing();
+}
+
+body {
+    @include body-font();
+    color: $body-color;
+    
+    font-size: 0.8em;
+    
+    @media screen and (min-width: $mobile) {
+        font-size: 0.9em;
+    }
+    
+    @media screen and (min-width: $phablet) {
+        font-size: 1em;
+    }
+    
+    &.modal-open {
+        overflow-y: hidden;
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    @include heading-font();
+    color: $heading-color;
+}
+
+h1 {
+    @include typl8-typescale(map-get($typl8-scale, typl8-alpha), $typl8-font-base, rem);
+                
+    @media screen and (min-width: $phablet) {
+       
+        @include typl8-typescale(map-get($typl8-scale, typl8-mega), $typl8-font-base, rem);
+    }
+}
+
+h2 {
+    @include typl8-typescale(map-get($typl8-scale, typl8-beta), $typl8-font-base, rem);
+                
+    @media screen and (min-width: $phablet) {
+       
+        @include typl8-typescale(map-get($typl8-scale, typl8-alpha), $typl8-font-base, rem);
+    }
+}
+
+h3 {
+    @include typl8-typescale(map-get($typl8-scale, typl8-gamma), $typl8-font-base, rem);
+                
+    @media screen and (min-width: $phablet) {
+       
+        @include typl8-typescale(map-get($typl8-scale, typl8-beta), $typl8-font-base, rem);
+    }
+}
+
+.page-container {
+    width: 100%;
+    min-width: $min-width;
+    margin: 0 auto;
+    padding: 0;
+    
+    .page-inner {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        max-width: $max-width;
+        transition: padding 0.3s ease-out;
+        
+        padding-left: $page-padding-sm;
+        padding-right: $page-padding-sm;
+        
+        @media screen and (min-width: $phablet) {
+            padding-left: $page-padding;
+            padding-right: $page-padding;
+        }
+        
+        @media screen and (min-width: $desktop) {
+            padding-left: $page-padding-lg;
+            padding-right: $page-padding-lg;
+        }
+    }
+}
+
+
+
